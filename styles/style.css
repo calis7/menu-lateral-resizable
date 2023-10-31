@@ -1,0 +1,76 @@
+.container {
+    display: grid;
+    grid-template-columns: auto 2px auto;
+    /* Columna auto para el sidebar, 2px para el control de redimensionamiento y auto para el contenido */
+
+
+    /* Divide en tres columnas: primera barra lateral, contenido, segunda barra lateral */
+    background-color: #f0f0f0;
+    overflow: hidden;
+    
+
+}
+
+.sidebar {
+    background-color: #333;
+    color: white;
+    overflow-y: scroll;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+.sidebar {
+    /* max-width: 15rem;*/
+    /* SI ESTA PROPIEDAD ESTÁTICA ESTÁ ACTIVA NO DEJARÍA MODIFICAR EL SIDE BAR CON JAVASCRIPT */
+    background-color: #333;
+    color: white;
+    max-height: 100vh;
+    /* Establece la altura máxima del sidebar al 100% de la altura de la ventana (viewport height, vh) */
+    overflow-y: auto;
+    /* Habilita la barra de desplazamiento vertical cuando sea necesario */
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 10px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.content {
+    overflow-y: auto;
+
+    max-height: 100vh;
+    width: 100%;
+    /* SUPER IMPORTANTE MANEJAR LA MEDIDA RELATIVA DEL VIEWPORT Y NO PIXELES */
+}
+
+.resize-handle {
+    cursor: col-resize;
+    width: 2px;/* Cambia el cursor al estilo de redimensionamiento */
+    background-color: #f0f0f0; /* Ancho del control de redimensionamiento */
+    transition: background-color 0.3s; /* Agrega la transición para el color de fondo */
+}
+
+/* Agrega este estilo CSS para el color de fondo cuando se pase el cursor sobre el div de redimensionamiento */
+.resize-handle:hover {
+    background-color: rgb(0, 157, 255);
+    /* Cambia esto al color que desees */
+}
